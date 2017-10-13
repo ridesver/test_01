@@ -1,7 +1,6 @@
-# test_01
+# test_001
 #include <iostream>
 #include <cstring>
-
 
 using namespace std;
 
@@ -10,12 +9,10 @@ int main()
     int i=80;
     char k[i];
     cin.getline (k, i);
-    for (int i = 0; i <= (strlen(k)); i++) 
+    for (int i = 0; i <= strlen(k); i++) 
     {
         if (k[i] == ' ')
-        
             cout << "%20";
-    
         else
         cout << k[i];
     }
