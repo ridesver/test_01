@@ -1,1 +1,59 @@
+#include <iostream>
+#include <sstream>
 
+using namespace std;
+
+int main()
+{
+	bool chisla = false;
+	int A[10], i, j, N, Sum;
+	string str;
+	cout << "Input: \n";
+
+	for (;;)
+	{
+		getline(cin, str);
+		istringstream stream(str);
+		for (i = 0; i < 10; i++)
+		{
+			if (!(stream >> A[i]))
+			{
+				cout << "An error has occurred while reading the input sequence. \n";
+				return 0;
+			}
+		}
+		break;
+	}
+	{
+		for (i = 0; i < 9; i++)
+		{
+			if (A[i] > A[i + 1])
+			{
+				cout << "The input sequence must be non-decreasing. \n";
+				return 0;
+			}
+		}
+	}
+	{
+		cout << "Input Sum: \n";
+		cin >> N;
+		for (i = 0; i < 10; i++)
+		{
+			for (j = i + 1; j < 10; j++)
+			{
+				Sum = A[i] + A[j];
+				if (Sum == N)
+				{
+					cout << "Pair of numbers: \n" << A[i] << ' ' << A[j] << "\n";
+					return 0;
+				}
+				else chisla = true;
+			}
+		}
+
+
+		if (chisla) cout << "There is no such pair of numbers. \n";
+
+		return 0;
+	}
+}
